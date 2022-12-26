@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 public class NoteEntity
 {
-     [Key]
+    [Key]
     public int Id { get; set; }
 
     [Required]
@@ -22,4 +22,9 @@ public class NoteEntity
     [ForeignKey(nameof(Owner))]
     public int OwnerId { get; set; }
     public virtual UserEntity Owner { get; set; }
+
+    [Required]
+    [ForeignKey(nameof(Category))]
+    public int CatetoryId { get; set; }
+    public virtual Category Category { get; set; }
 }
